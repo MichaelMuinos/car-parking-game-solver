@@ -93,11 +93,11 @@ public class CarParkingSolver {
         return true;
     }
 
-    public static boolean isOutOfBounds(int[][] board, int i, int j) {
+    public boolean isOutOfBounds(int[][] board, int i, int j) {
         return i < 0 || j < 0 || i >= board.length || j == board[0].length || board[i][j] == OUT_OF_BOUNDS;
     }
 
-    public static int[] determineCarPosition(int[] carPosition, Direction direction) {
+    public int[] determineCarPosition(int[] carPosition, Direction direction) {
         int x = carPosition[0], y = carPosition[1];
         if (direction == Direction.DOWN) ++x;
         else if (direction == Direction.UP) --x;
@@ -106,7 +106,7 @@ public class CarParkingSolver {
         return new int[] {x, y};
     }
 
-    public static Character determineMove(Direction direction) {
+    public Character determineMove(Direction direction) {
         if (direction == Direction.DOWN) return 'v';
         else if (direction == Direction.UP) return '^';
         else if (direction == Direction.LEFT) return '<';
