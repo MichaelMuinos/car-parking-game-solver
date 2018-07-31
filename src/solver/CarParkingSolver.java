@@ -1,3 +1,5 @@
+package solver;
+
 import java.util.*;
 
 public class CarParkingSolver {
@@ -6,10 +8,13 @@ public class CarParkingSolver {
     public static final int EMPTY_SPACE = 1;
     public static final int CAR = 2;
     public static final int BOX = 3;
+    public static final int PARKING_SPOT = 4;
+    public static final int PARKING_SPOT_AND_BOX = 5;
+    public static final int PARKING_SPOT_AND_CAR = 6;
 
-    public List<Character> solveLevel(Level level, List<int[]> parkingSpots) {
+    public List<Character> solveLevel(Level level) {
         // sanity check -> check for null values
-        if (level == null || parkingSpots == null || parkingSpots.size() == 0) return null;
+        if (level == null || level.parkingSpots == null || level.parkingSpots.size() == 0) return null;
 
         // create queue of level objects
         Queue<Level> levelQueue = new LinkedList<>();
@@ -22,7 +27,7 @@ public class CarParkingSolver {
         while (!levelQueue.isEmpty()) {
             // poll the front of the queue and check if the level is solved
             Level levelDequeue = levelQueue.poll();
-            if (levelDequeue.isSolved(parkingSpots)) return levelDequeue.moves;
+            if (levelDequeue.isSolved()) return levelDequeue.moves;
 
             // add our levelDequeue object to the set
             levelSet.add(levelDequeue);
@@ -48,7 +53,7 @@ public class CarParkingSolver {
                     int[] childCarPosition = determineCarPosition(carPosition, direction);
 
                     // create our new level
-                    Level childLevel = new Level(copy, moves, childCarPosition);
+                    Level childLevel = new Level(levelDequeue.level, copy, childCarPosition, moves, levelDequeue.parkingSpots);
                     if (!levelSet.contains(childLevel)) levelQueue.add(childLevel);
                 }
             }
