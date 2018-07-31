@@ -1,6 +1,5 @@
 import solver.CarParkingSolver;
 import solver.Level;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
