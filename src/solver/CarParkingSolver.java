@@ -12,6 +12,7 @@ public class CarParkingSolver {
     public static final int PARKING_SPOT_AND_BOX = 5;
     public static final int PARKING_SPOT_AND_CAR = 6;
 
+
     public List<Character> solveLevel(Level level) {
         // sanity check -> check for null values
         if (level == null || level.parkingSpots == null || level.parkingSpots.size() == 0) return null;
