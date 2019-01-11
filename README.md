@@ -1,5 +1,5 @@
 # Car-Parking-Game-Solver
-Solves various levels for the game Car Parking 2 automatically. This game is pretty much a [Sokoban](https://en.wikipedia.org/wiki/Sokoban) reskin. The game can be found at https://www.mindgames.com/game/Car+Parking+2.
+Solves various levels for the game Car Parking 2 automatically. This game is just a [Sokoban](https://en.wikipedia.org/wiki/Sokoban) reskin. The game can be found at https://www.mindgames.com/game/Car+Parking+2.
 
 
 ## How it works
@@ -28,7 +28,7 @@ Where
 
 So, our encoding of the level is pretty much this image. We only care about the
 content inside of the red square. The goal is to encode the level to be the smallest
-matrix possible without exluding useful content.
+matrix possible without excluding useful content.
 
 ![alt test](https://github.com/MichaelMuinos/Car-Parking-Game-Solver/blob/master/ExampleLevelModified.png)
 
